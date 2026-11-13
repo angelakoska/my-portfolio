@@ -7,9 +7,13 @@ One website for my personal portfolio and web development assignments. It helps 
 - `index.html`: Home, introduction, portrait placeholder, skills, certification placeholder, and featured project.
 - `projects.html`: Current portfolio project and clearly marked planned coursework updates.
 - `about.html`: Personal background, education, experience, and placeholders for résumé and contact information.
-- `assets/wireframe.png`: Desktop and mobile layout plans for all three pages, with palette and font notes.
+- `wireframe.png`: Desktop and mobile layout plans for all three pages, with palette and font notes.
 
 All three pages have shared navigation, working relative links, logical h1–h3 headings, and semantic HTML. CSS is intentionally reserved for Milestone 2. Browser defaults are expected at this stage. Portrait, certification, résumé, repository, and contact details remain honest placeholders until the approved assets and links are available.
+
+## Wireframe
+
+![Wireframes for Angela D. Koska’s Home, Projects and Work, and About and Contact pages, including mobile layout plans and the chosen color palette.](wireframe.png)
 
 ## Visual direction
 Light and airy: off-white backgrounds, white cards, generous spacing, rounded corners, and restrained color accents.
@@ -34,7 +38,7 @@ Shared navigation and footer appear on every page. Mobile layouts stack content 
 1. Extract the ZIP.
 2. Open `index.html` in a browser.
 3. Follow navigation to Projects & Work and About & Contact.
-4. View `assets/wireframe.png` for the planned styled layout.
+4. View `wireframe.png` for the planned styled layout.
 
 ## Submit Milestone 1
 Upload these files and the assets folder into the existing portfolio repository, keeping the three HTML files at its root. Commit them as the Milestone 1 foundation. Submit the GitHub repository URL, with the HTML files and wireframe visible. Keep this commit in history before continuing to styling.
