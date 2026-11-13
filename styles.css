@@ -42,6 +42,9 @@ section > :last-child { margin-bottom: 0; }
 .button:hover { background: #67204f; }
 .skills-card { border-top: 8px solid var(--mint); }
 .certification-card { border-top: 8px solid var(--lavender); }
+.certificate-display { margin: 24px 0 0; }
+.certificate-display img { width: 100%; height: auto; border: 1px solid #ded8e9; border-radius: 12px; }
+.certificate-display figcaption { margin-top: 8px; color: var(--muted); font-size: .875rem; }
 .featured-card { background: #fff0e7; border-top: 8px solid var(--peach); }
 .project-grid { display: grid; gap: 24px; margin-top: 32px; }
 .project-grid article { padding: 24px; border-radius: 16px; background: #f4f0fb; border-top: 6px solid var(--lavender); min-width: 0; }
