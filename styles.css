@@ -1,4 +1,4 @@
-/* Angela D. Koska | Milestone 2
+/* Angela D. Koska | Milestones 2 and 3
    8px spacing scale; mobile-first; shared by all three pages. */
 :root {
   --blue: #bcd2ee; --lavender: #9b7ede; --plum: #832161;
@@ -69,4 +69,29 @@ section > :last-child { margin-bottom: 0; }
   .welcome-card { padding: 40px 384px 40px 40px; }
   .portrait-placeholder { width: 280px; right: 40px; }
   .page-layout { gap: 32px; }
+}
+
+
+/* Milestone 3: form grouping, clear errors, and keyboard access. */
+[hidden] { display: none !important; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+.button { border: 2px solid transparent; max-width: 100%; white-space: normal; }
+input, textarea { display: block; width: 100%; min-width: 0; padding: 12px; border: 2px solid var(--muted); border-radius: 8px; background: white; color: var(--ink); }
+textarea { resize: vertical; }
+input:focus-visible, textarea:focus-visible, button:focus-visible { outline: 3px solid var(--plum); outline-offset: 4px; }
+fieldset { min-width: 0; border: 0; padding: 0; margin: 0; }
+legend { font-weight: 700; padding: 0; margin-bottom: 16px; }
+label { display: block; font-weight: 600; margin-bottom: 8px; }
+.form-field { margin-bottom: 24px; }
+.field-hint { color: var(--muted); font-size: .875rem; margin-top: 8px; }
+.field-error { color: #a11832; font-weight: 600; margin-top: 8px; }
+[aria-invalid='true'] { border-color: #a11832; border-style: dashed; }
+#form-status:not(:empty) { margin-top: 24px; padding: 16px; border-left: 4px solid var(--plum); background: #f4f0fb; }
+section[aria-labelledby='contact-heading'] { grid-column: 1 / -1; }
+#contact-form { max-width: 720px; }
+#main-content:focus { outline: none; }
+@media (forced-colors: active) {
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline-color: Highlight; }
+  .button, nav a[aria-current='page'] { border: 2px solid ButtonText; }
 }
