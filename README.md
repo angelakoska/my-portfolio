@@ -9,7 +9,7 @@ One website for my personal portfolio and web development assignments. It helps 
 - `about.html`: Personal background, education, experience, and placeholders for résumé and contact information.
 - `wireframe.png`: Desktop and mobile layout plans for all three pages, with palette and font notes.
 
-All three pages have shared navigation, working relative links, logical h1–h3 headings, and semantic HTML. The Milestone 1 foundation is retained in Git history. Milestone 2 now adds shared CSS. Portrait, certification, and resumé download remain placeholders until approved assets are available; repository links and a practice contact form are included.
+All three pages have shared navigation, working relative links, logical h1–h3 headings, and semantic HTML. The Milestone 1 foundation is retained in Git history. Milestone 2 now adds shared CSS. Portrait and certification remain placeholders until approved assets are available; the November 2026 resumé PDF, repository links, and a practice contact form are included.
 
 ## Wireframe
 
