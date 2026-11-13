@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Angela D. Koska’s IT portfolio: education, leadership experience, and web development projects.">
   <title>About & Contact | Angela D. Koska</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a href="#main-content">Skip to main content</a>
-  <header>
-    <p><a href="index.html">Angela D. Koska</a></p>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <p class="brand"><a href="index.html"><span class="monogram" aria-hidden="true">AK</span> Angela D. Koska</a></p>
     <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -18,8 +22,8 @@
       </ul>
     </nav>
   </header>
-  <main id="main-content">
-    <h1>About & Contact</h1>
+  <main id="main-content" class="page-layout">
+    <div class="page-intro"><p class="eyebrow">PORTFOLIO / ANGELA D. KOSKA</p><h1>About & Contact</h1></div>
     <section aria-labelledby="story-heading">
       <h2 id="story-heading">My journey into IT</h2>
       <p>I am working toward an associate degree in Information Technology at Campus. I want this portfolio to help future employers see my skills in action and how I can adapt my work to their needs.</p>
@@ -35,13 +39,14 @@
     </section>
     <section aria-labelledby="contact-heading">
       <h2 id="contact-heading">Connect with me</h2>
-      <p>Contact details and my GitHub profile will be added here.</p>
-      <!-- Add only contact details approved for public display. -->
+      <p>Find my coursework and follow my progress on GitHub.</p>
+      <p><a class="button" href="https://github.com/angelakoska">Visit my GitHub profile</a></p>
       <!-- Milestone 3: add a contact form with labels, appropriate grouping, and accessible errors. -->
     </section>
   </main>
-  <footer>
+  <footer class="site-footer">
     <p>© 2026 Angela D. Koska</p>
   </footer>
 </body>
 </html>
+

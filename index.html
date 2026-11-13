@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Angela D. Koska’s IT portfolio: education, leadership experience, and web development projects.">
   <title>Home | Angela D. Koska</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a href="#main-content">Skip to main content</a>
-  <header>
-    <p><a href="index.html">Angela D. Koska</a></p>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <p class="brand"><a href="index.html"><span class="monogram" aria-hidden="true">AK</span> Angela D. Koska</a></p>
     <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html" aria-current="page">Home</a></li>
@@ -18,37 +22,38 @@
       </ul>
     </nav>
   </header>
-  <main id="main-content">
-    <h1>Angela D. Koska</h1>
-    <p>IT Student • Experienced Team Leader • Creative Problem Solver</p>
-    <section aria-labelledby="welcome-heading">
+  <main id="main-content" class="page-layout">
+    <div class="page-intro"><p class="eyebrow">PORTFOLIO / ANGELA D. KOSKA</p><h1>Angela D. Koska</h1>
+    <p class="tagline">IT Student • Experienced Team Leader • Creative Problem Solver</p></div>
+    <section class="welcome-card" aria-labelledby="welcome-heading">
       <h2 id="welcome-heading">Welcome to my portfolio</h2>
       <p>I am studying Information Technology at Campus and building on my experience in leadership and customer service. This portfolio shares my coursework, developing technical skills, and creative approach to solving problems.</p>
       <!-- Add the chosen portrait here with meaningful alt text. -->
-      <p>Portrait coming soon.</p>
-      <p><a href="projects.html">Explore my projects</a></p>
+      <div class="portrait-placeholder" role="img" aria-label="Portrait placeholder for Angela D. Koska"><span aria-hidden="true">AK</span><small>Portrait coming soon</small></div>
+      <p><a class="button" href="projects.html">Explore my projects <span aria-hidden="true">↗</span></a></p>
     </section>
-    <section aria-labelledby="skills-heading">
+    <section class="skills-card" aria-labelledby="skills-heading">
       <h2 id="skills-heading">Skills I bring</h2>
       <h3>Technology and design</h3>
       <ul><li>HTML page structure</li><li>CSS and responsive layouts</li><li>Accessibility awareness</li></ul>
       <h3>Leadership and service</h3>
       <ul><li>Clear team communication</li><li>Customer service</li><li>Organization and problem solving</li></ul>
     </section>
-    <section aria-labelledby="certification-heading">
+    <section class="certification-card" aria-labelledby="certification-heading">
       <h2 id="certification-heading">Certification</h2>
       <p>My Microsoft certification will be featured here.</p>
       <!-- Add the verified certification title and image before final publication. -->
     </section>
-    <section aria-labelledby="featured-heading">
+    <section class="featured-card" aria-labelledby="featured-heading">
       <h2 id="featured-heading">Featured project</h2>
       <h3>My personal portfolio</h3>
       <p>One website that grows with my web development coursework and showcases what I am learning.</p>
       <a href="projects.html#portfolio-project">Read about my portfolio project</a>
     </section>
   </main>
-  <footer>
+  <footer class="site-footer">
     <p>© 2026 Angela D. Koska</p>
   </footer>
 </body>
 </html>
+

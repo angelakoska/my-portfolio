@@ -1,0 +1,72 @@
+/* Angela D. Koska | Milestone 2
+   8px spacing scale; mobile-first; shared by all three pages. */
+:root {
+  --blue: #bcd2ee; --lavender: #9b7ede; --plum: #832161;
+  --peach: #faa275; --mint: #76e7cd; --paper: #faf9fc;
+  --ink: #292735; --muted: #595467; --white: #fff;
+  --space: 8px; --radius: 24px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.7 'Open Sans', sans-serif; }
+a { color: var(--plum); text-underline-offset: 4px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--plum); outline-offset: 5px; border-radius: 4px; }
+h1, h2, h3 { font-family: 'Handlee', cursive; line-height: 1.2; color: var(--plum); }
+h1 { font-size: clamp(2.5rem, 6vw, 4.75rem); margin: 8px 0 16px; }
+h2 { font-size: 2rem; margin: 0 0 16px; }
+h3 { font-size: 1.5rem; margin: 24px 0 8px; }
+p { margin: 0 0 16px; }
+ul { padding-left: 24px; }
+img { display: block; max-width: 100%; height: auto; }
+.skip-link { position: absolute; top: 8px; left: 8px; padding: 8px 16px; background: white; transform: translateY(-180%); z-index: 10; }
+.skip-link:focus { transform: translateY(0); }
+.site-header { max-width: 1200px; margin: auto; padding: 24px; display: flex; flex-direction: column; gap: 16px; border-bottom: 1px solid #ded8e9; }
+.brand { margin: 0; font-weight: 700; }
+.brand a { display: flex; align-items: center; gap: 16px; color: var(--ink); text-decoration: none; }
+.monogram { display: inline-grid; place-items: center; width: 48px; height: 48px; background: var(--plum); color: white; border-radius: 50%; font-family: 'Handlee', cursive; font-size: 1.25rem; }
+nav ul { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+nav a { display: block; padding: 8px 12px; text-decoration: none; font-size: .875rem; font-weight: 600; border-radius: 24px; }
+nav a[aria-current='page'] { color: white; background: var(--plum); }
+nav a:hover { box-shadow: inset 0 0 0 2px var(--plum); }
+#main-content { max-width: 1200px; margin: auto; padding: 40px 24px 64px; }
+.page-layout { display: grid; gap: 24px; }
+.page-intro { padding: 8px 0 16px; }
+.eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .16em; color: var(--muted); }
+.tagline { max-width: 640px; font-size: 1.125rem; color: var(--muted); }
+section { background: white; padding: 24px; border-radius: var(--radius); border: 1px solid #e6e0ed; min-width: 0; }
+section > :last-child { margin-bottom: 0; }
+.welcome-card { background: #edf3fb; position: relative; }
+.portrait-placeholder { display: grid; place-content: center; text-align: center; min-height: 200px; margin: 24px 0; border-radius: 120px 120px 24px 24px; background: var(--blue); color: var(--plum); }
+.portrait-placeholder span { font: 4rem 'Handlee', cursive; }
+.portrait-placeholder small { color: var(--ink); }
+.button { display: inline-block; background: var(--plum); color: white; padding: 12px 24px; border-radius: 32px; text-decoration: none; font-weight: 600; }
+.button:hover { background: #67204f; }
+.skills-card { border-top: 8px solid var(--mint); }
+.certification-card { border-top: 8px solid var(--lavender); }
+.featured-card { background: #fff0e7; border-top: 8px solid var(--peach); }
+.project-grid { display: grid; gap: 24px; margin-top: 32px; }
+.project-grid article { padding: 24px; border-radius: 16px; background: #f4f0fb; border-top: 6px solid var(--lavender); min-width: 0; }
+.project-grid article:nth-child(2) { background: #eafbf6; border-color: var(--mint); }
+.project-grid article:nth-child(3) { background: #fff0e7; border-color: var(--peach); }
+.project-grid h3 { margin-top: 0; }
+.site-footer { max-width: 1152px; margin: auto; border-top: 1px solid #ded8e9; padding: 24px; font-size: .875rem; color: var(--muted); }
+.site-footer p { margin: 0; }
+/* Tablet: two-column content and a horizontal header. */
+@media (min-width: 768px) {
+  .site-header { flex-direction: row; align-items: center; justify-content: space-between; }
+  .page-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-intro, .welcome-card, .featured-card, .projects-section { grid-column: 1 / -1; }
+  section { padding: 32px; }
+  .welcome-card { padding-right: 288px; min-height: 320px; }
+  .portrait-placeholder { position: absolute; right: 32px; top: 32px; width: 216px; height: calc(100% - 64px); margin: 0; }
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  section[aria-labelledby='story-heading'] { grid-column: 1 / -1; }
+}
+/* Desktop: three project columns and roomier composition. */
+@media (min-width: 1100px) {
+  #main-content { padding-top: 56px; }
+  .project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .welcome-card { padding: 40px 384px 40px 40px; }
+  .portrait-placeholder { width: 280px; right: 40px; }
+  .page-layout { gap: 32px; }
+}
