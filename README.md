@@ -70,7 +70,7 @@ Live site: https://angelakoska.github.io/my-portfolio/
 - Made the main landmark programmatically focusable so the existing skip link has an explicit focus destination.
 - Retained one h1 per page, ordered section headings, descriptive navigation, and aria-current on the current page.
 
-These are implementation changes and code checks, not claims of WAVE findings or a completed WAVE audit.
+These are implementation improvements; the WAVE results are recorded separately below. No WAVE errors required additional fixes.
 
 ### Intentional Gestalt principles
 1. **Proximity:** I keep each project title, description, skills, and link together inside its card, with more space between separate projects; each form label also stays close to its input and error message.
@@ -105,20 +105,31 @@ The table below uses local WCAG relative-luminance calculations for all text/bac
 | `#FFFFFF` | `#67204F` | 11.07:1 | Pass |
 | `#A11832` | `#FFFFFF` | 7.80:1 | Pass |
 
-Required external verification: confirm these pairs with [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/); its API could not be reached by the editing tool. Local calculations are not recorded as a WebAIM test.
+The lowest-ratio pair, plum `#832161` on powder blue `#BCD2EE`, was also verified in the WebAIM Contrast Checker UI at **5.77:1 (AA Pass)**. WAVE reported zero contrast errors on all three pages. The other table values are local calculations; individual WebAIM checks for those pairs are not claimed.
 
 ### Verification completed
 - Static HTML checks: balanced elements, unique IDs, valid ARIA references, and labels for each input.
 - JavaScript syntax check passed.
 - Validation logic tests with a mock DOM passed for empty and whitespace-only entries, invalid email, corrected values, valid entries, maximum length, selection of the first invalid field, and preventing form submission. These are not browser or screen-reader tests.
 
-### Required final checks — still pending
-- [ ] Run WAVE on Home and fix every error.
-- [ ] Run WAVE on Projects & Work and fix every error.
-- [ ] Run WAVE on About & Contact and fix every error.
-- [ ] Record WAVE results and any resulting fixes here, one sentence per fix.
-- [ ] Verify the text/background pairs in WebAIM Contrast Checker.
-- [ ] Check the form with keyboard navigation, blank submission, invalid email, corrections, and valid entries.
-- [ ] Recheck the updated About & Contact page at 320px, 768px, and 1200px.
+### Live WAVE audit — November 12, 2026
+| Page | Errors | Contrast errors | Alerts |
+|---|---|---|---|
+| Home | 0 | 0 | 1 redundant link |
+| Projects & Work | 0 | 0 | 1 redundant link |
+| About & Contact | 0 | 0 | 1 redundant link; 1 noscript notice |
 
-Milestone 3 is not ready for final submission until the pending checks are completed. Obtain the full Milestone 4 directions before planning its JavaScript requirements.
+Alert review: the brand link and Home navigation item intentionally share the same destination, and the noscript notice explains that the practice form needs JavaScript. These are review alerts, not WAVE errors, and were retained for usability. WAVE does not establish complete accessibility compliance by itself.
+
+### Live form checks completed
+- Empty submission displayed three field-specific errors and focused Name.
+- Invalid email displayed the email-format instruction and reported one remaining invalid field.
+- Correcting the email produced the accurate message that entries passed checks and nothing was sent or stored.
+- Tab moved from Name to Email to Message to the check button.
+- The desktop contact form was visually inspected after testing; sample data was cleared by reloading.
+
+### Final review remaining
+- [ ] Recheck the updated About & Contact page at 320px, 768px, and 1200px.
+- [ ] For a full record of the assignment's WebAIM-specific checks, verify the remaining color pairs from the table individually in WebAIM Contrast Checker.
+
+Implementation, WAVE auditing, and live form checks are complete. The final review items above remain open. Screen-reader testing is not claimed. Obtain the full Milestone 4 directions before planning its JavaScript requirements.
