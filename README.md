@@ -9,7 +9,7 @@ One website for my personal portfolio and web development assignments. It helps 
 - `about.html`: Personal background, education, experience, and placeholders for résumé and contact information.
 - `wireframe.png`: Desktop and mobile layout plans for all three pages, with palette and font notes.
 
-All three pages have shared navigation, working relative links, logical h1–h3 headings, and semantic HTML. The Milestone 1 foundation is retained in Git history. Milestone 2 now adds shared CSS. Portrait and certification remain placeholders until approved assets are available; the November 2026 resumé PDF, repository links, and a practice contact form are included.
+All three pages have shared navigation, working relative links, logical h1–h3 headings, and semantic HTML. The Milestone 1 foundation is retained in Git history. Milestone 2 adds the shared responsive stylesheet; later updates add the headshot, certificate, November 2026 resumé PDF, repository links, and a practice contact form.
 
 ## Wireframe
 
@@ -50,86 +50,87 @@ Implemented in `styles.css`, linked from all three pages:
 - An 8px-based spacing system, rounded cards, and visible keyboard focus.
 - Flexbox navigation and Grid page/project layouts.
 - Media queries at 768px and 1100px; mobile is the default layout.
-- The portrait and certification remain placeholders until approved images are added.
+- Later updates added an optimized portrait and Microsoft Office Specialist certificate image under `assets/`.
 
 ### Milestone 2 review
-Angela confirmed the site is live and reported that the pages looked good after the requested screen-size checks. Automated visual verification was unavailable in the editing environment.
+Angela confirmed the site is live and reported that the pages looked good after the requested screen-size checks.
 
 Live site: https://angelakoska.github.io/my-portfolio/
 
-## Milestone 3: Accessible and designed
+## Milestone 3: Accessibility and intentional design
 
-### Accessibility changes and existing features
-- Added visible labels explicitly associated with every contact input so their purpose is available to assistive technology.
-- Grouped contact fields inside a fieldset with a descriptive legend.
-- Added visible required-field wording and native required attributes rather than relying on color or an unexplained symbol.
-- Connected specific error messages and the message-length hint to their fields using aria-describedby.
-- Added aria-invalid on failing fields and dashed error borders, so errors are not communicated by color alone.
-- Focus moves to the first invalid field after a validation attempt, and a live status region reports the result.
-- Added clear focus outlines and contrasting borders for form controls and the button.
-- Made the main landmark programmatically focusable so the existing skip link has an explicit focus destination.
-- Retained one h1 per page, ordered section headings, descriptive navigation, and aria-current on the current page.
+### 1. Accessibility fixes
 
-These are implementation improvements; the WAVE results are recorded separately below. No WAVE errors required additional fixes.
+- Kept one h1 per page, logical heading order, descriptive main navigation, and aria-current to orient readers.
+- Added a skip link to the main content and made its destination focusable for keyboard users.
+- Added visible labels explicitly associated with every contact form field.
+- Grouped related form fields in a fieldset with a descriptive legend.
+- Connected help and error text to their fields with aria-describedby and marked invalid fields with aria-invalid plus a dashed border.
+- Moved keyboard focus to the first invalid field and used a polite live status message to announce validation results.
+- Shortened the certificate image alt text and kept the credential name and date in its visible caption to avoid repeating a long description.
+- Kept visible keyboard focus outlines and contrasting control borders.
 
-### Intentional Gestalt principles
-1. **Proximity:** I keep each project title, description, skills, and link together inside its card, with more space between separate projects; each form label also stays close to its input and error message.
-2. **Similarity:** My pages repeat the same navigation, plum buttons, heading fonts, rounded cards, and spacing so related elements are recognizable across the site.
-3. **Common region:** Card boundaries group related content, and the contact section and fieldset organize the form as one task.
+### Fresh WAVE audit — November 14, 2026
 
-### Contact form behavior
-The contact form is a clearly labeled practice form. It validates entries locally, does not transmit or store personal information, and never claims that a message was sent. The button is labeled “Check my message.” A delivery service and recipient must be configured separately to receive messages. Without JavaScript, the fieldset stays disabled and an explanatory message is shown; the GitHub link remains available.
-
-### Contrast checks
-The table below uses local WCAG relative-luminance calculations for all text/background pairs in the current stylesheet. All exceed 4.5:1, including the error text. Muted input borders also exceed 3:1 against white. Lavender, peach, and mint accents are decorative, not the sole way to identify a control or communicate an error.
-
-| Foreground | Background | Calculated ratio | AA normal text |
-|---|---|---|---|
-| `#292735` | `#FFFFFF` | 14.62:1 | Pass |
-| `#292735` | `#FAF9FC` | 13.94:1 | Pass |
-| `#292735` | `#EDF3FB` | 13.10:1 | Pass |
-| `#292735` | `#BCD2EE` | 9.47:1 | Pass |
-| `#292735` | `#FFF0E7` | 13.14:1 | Pass |
-| `#292735` | `#F4F0FB` | 13.03:1 | Pass |
-| `#292735` | `#EAFBF6` | 13.67:1 | Pass |
-| `#832161` | `#FFFFFF` | 8.92:1 | Pass |
-| `#832161` | `#FAF9FC` | 8.50:1 | Pass |
-| `#832161` | `#EDF3FB` | 7.99:1 | Pass |
-| `#832161` | `#BCD2EE` | 5.77:1 | Pass |
-| `#832161` | `#FFF0E7` | 8.01:1 | Pass |
-| `#832161` | `#F4F0FB` | 7.94:1 | Pass |
-| `#832161` | `#EAFBF6` | 8.33:1 | Pass |
-| `#595467` | `#FFFFFF` | 7.27:1 | Pass |
-| `#595467` | `#FAF9FC` | 6.93:1 | Pass |
-| `#FFFFFF` | `#832161` | 8.92:1 | Pass |
-| `#FFFFFF` | `#67204F` | 11.07:1 | Pass |
-| `#A11832` | `#FFFFFF` | 7.80:1 | Pass |
-
-The lowest-ratio pair, plum `#832161` on powder blue `#BCD2EE`, was also verified in the WebAIM Contrast Checker UI at **5.77:1 (AA Pass)**. WAVE reported zero contrast errors on all three pages. The other table values are local calculations; individual WebAIM checks for those pairs are not claimed.
-
-### Verification completed
-- Static HTML checks: balanced elements, unique IDs, valid ARIA references, and labels for each input.
-- JavaScript syntax check passed.
-- Validation logic tests with a mock DOM passed for empty and whitespace-only entries, invalid email, corrected values, valid entries, maximum length, selection of the first invalid field, and preventing form submission. These are not browser or screen-reader tests.
-
-### Live WAVE audit — November 12, 2026
 | Page | Errors | Contrast errors | Alerts |
-|---|---|---|---|
+|---|---:|---:|---|
 | Home | 0 | 0 | 1 redundant link |
 | Projects & Work | 0 | 0 | 1 redundant link |
-| About & Contact | 0 | 0 | 1 redundant link; 1 noscript notice |
+| About & Contact | 0 | 0 | 1 redundant link; 1 PDF link; 1 noscript notice |
 
-Alert review: the brand link and Home navigation item intentionally share the same destination, and the noscript notice explains that the practice form needs JavaScript. These are review alerts, not WAVE errors, and were retained for usability. WAVE does not establish complete accessibility compliance by itself.
+WAVE found no errors or contrast errors on any page. The redundant-link alert is the site name and Home link sharing a destination; the PDF alert identifies the résumé download; the noscript notice explains the form’s JavaScript requirement. These are review alerts, not WAVE errors. The refreshed Home scan also confirmed the shorter certificate alt text no longer triggers a long-alt alert.
 
-### Live form checks completed
-- Empty submission displayed three field-specific errors and focused Name.
-- Invalid email displayed the email-format instruction and reported one remaining invalid field.
-- Correcting the email produced the accurate message that entries passed checks and nothing was sent or stored.
-- Tab moved from Name to Email to Message to the check button.
-- The desktop contact form was visually inspected after testing; sample data was cleared by reloading.
+### 2. Intentional visual design
 
-### Final review remaining
-- [ ] Recheck the updated About & Contact page at 320px, 768px, and 1200px.
-- [ ] For a full record of the assignment's WebAIM-specific checks, verify the remaining color pairs from the table individually in WebAIM Contrast Checker.
+The same color palette, fonts, navigation, and card styles are used on all three pages.
 
-Implementation, WAVE auditing, and live form checks are complete. The final review items above remain open. Screen-reader testing is not claimed. Obtain the full Milestone 4 directions before planning its JavaScript requirements.
+| Color | Hex | Role |
+|---|---|---|
+| Powder blue | #BCD2EE | Soft section and portrait backgrounds |
+| Lavender | #9B7EDE | Decorative details and borders |
+| Deep plum | #832161 | Headings, links, navigation accents, and buttons |
+| Peach | #FAA275 | Featured project accents |
+| Mint | #76E7CD | Skills and certification accents |
+| Off-white | #FAF9FC | Page background |
+
+- **Proximity:** Each project card keeps its title, description, skills, and link together, while spacing separates different projects; form labels and help text sit beside their fields.
+- **Similarity:** Repeated plum buttons, heading fonts, rounded cards, navigation, and spacing show which elements have related roles.
+- **Common region:** Card borders group related page content, and the contact fieldset gathers the form controls into one task.
+
+### WebAIM Contrast Checker results
+
+I checked every text/background pair used by the stylesheet in the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/). All normal-text combinations pass WCAG AA at 4.5:1 or higher; the muted input border also exceeds the 3:1 non-text component threshold.
+
+| Foreground | Background | Ratio | WCAG AA |
+|---|---|---:|---|
+| #292735 | #FFFFFF | 14.6:1 | Pass |
+| #292735 | #FAF9FC | 13.9:1 | Pass |
+| #292735 | #EDF3FB | 13.1:1 | Pass |
+| #292735 | #BCD2EE | 9.46:1 | Pass |
+| #292735 | #FFF0E7 | 13.1:1 | Pass |
+| #292735 | #F4F0FB | 13.0:1 | Pass |
+| #292735 | #EAFBF6 | 13.6:1 | Pass |
+| #832161 | #FFFFFF | 8.91:1 | Pass |
+| #832161 | #FAF9FC | 8.50:1 | Pass |
+| #832161 | #EDF3FB | 7.98:1 | Pass |
+| #832161 | #BCD2EE | 5.77:1 | Pass |
+| #832161 | #FFF0E7 | 8.01:1 | Pass |
+| #832161 | #F4F0FB | 7.94:1 | Pass |
+| #832161 | #EAFBF6 | 8.33:1 | Pass |
+| #595467 | #FFFFFF | 7.26:1 | Pass |
+| #595467 | #FAF9FC | 6.93:1 | Pass |
+| #FFFFFF | #832161 | 8.91:1 | Pass |
+| #FFFFFF | #67204F | 11.0:1 | Pass |
+| #A11832 | #FFFFFF | 7.80:1 | Pass |
+
+### 3. Accessible contact form
+
+The About & Contact page includes associated labels, a fieldset and legend, required-field instructions, linked hints and field-specific errors, aria-invalid states, keyboard focus management, and a live status message. The form validates entries locally, does not transmit or store them, and never claims a message was sent.
+
+### Verification notes
+
+- WAVE was run on all three live pages; all have zero errors and zero contrast errors.
+- The WebAIM Contrast Checker was used for all 19 text/background combinations listed above.
+- Existing code checks include unique IDs, valid ARIA references, form labels, JavaScript syntax, and validation behavior for empty, invalid, corrected, valid, and maximum-length entries.
+- Earlier responsive checks covered 320px, 768px, and 1200px; screen-reader testing is not claimed.
+- WAVE is an automated audit and does not by itself establish complete accessibility compliance.
