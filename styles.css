@@ -110,11 +110,48 @@ section[aria-labelledby='contact-heading'] { grid-column: 1 / -1; }
    font-weight: 700;
 }
 
-menu-toggle:hover {
+.menu-toggle:hover {
    background: #67204f;
 }
 
 .menu-toggle:focus-visible {
    outline: 3px solid var(--plum);
    outline-offset: 4px;
+}
+
+
+/* GitHub profile card loaded from the public REST API. */
+.github-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 720px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #f4f0fb;
+  border-left: 4px solid var(--lavender);
+  border-radius: 16px;
+}
+.github-profile-card img {
+  flex: 0 0 80px;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 2px solid var(--lavender);
+  border-radius: 50%;
+}
+.github-profile-details {
+  min-width: 0;
+}
+.github-profile-card h4 {
+  margin: 0 0 8px;
+  color: var(--plum);
+  font-family: 'Handlee', cursive;
+  font-size: 1.25rem;
+}
+.github-profile-card p {
+  margin-bottom: 8px;
+}
+.github-profile-card a {
+  font-weight: 600;
 }
