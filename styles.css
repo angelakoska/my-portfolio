@@ -98,3 +98,23 @@ section[aria-labelledby='contact-heading'] { grid-column: 1 / -1; }
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline-color: Highlight; }
   .button, nav a[aria-current='page'] { border: 2px solid ButtonText; }
 }
+
+
+/* Add JavaScript */
+.menu.toggle {
+   background: var(--plum);
+   color: var(--white);
+   border: 2px solid transparent;
+   padding: 8px 16px;
+   border-radius: 24px;
+   font-weight: 700;
+}
+
+menu.toggle:hover {
+   background: #67204f;
+}
+
+.menu-toggle:focus-visible {
+   outline: 3px solid var(--plum);
+   outline-offset: 4px;
+}
