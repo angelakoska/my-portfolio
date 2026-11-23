@@ -101,7 +101,7 @@ section[aria-labelledby='contact-heading'] { grid-column: 1 / -1; }
 
 
 /* Add JavaScript */
-.menu.toggle {
+.menu-toggle {
    background: var(--plum);
    color: var(--white);
    border: 2px solid transparent;
@@ -110,7 +110,7 @@ section[aria-labelledby='contact-heading'] { grid-column: 1 / -1; }
    font-weight: 700;
 }
 
-menu.toggle:hover {
+menu-toggle:hover {
    background: #67204f;
 }
 
